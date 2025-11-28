@@ -1,97 +1,53 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "BullQ API Documentation"
+description: "Plataforma completa de email marketing com automações inteligentes"
 ---
 
-## Setting up
+## Bem-vindo à API do BullQ 🚀
 
-Get your documentation site up and running in minutes.
+O BullQ é uma plataforma de email marketing completa que oferece:
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Campanhas de Email" icon="envelope" href="/api-reference/introduction">
+    Envie emails em massa com métricas detalhadas
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Automações" icon="robot" href="/api-reference/introduction">
+    Crie fluxos automatizados para engajar seus contatos
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Segmentação" icon="filter" href="/api-reference/introduction">
+    Segmente sua base com filtros avançados
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="AI Agents" icon="brain" href="/api-reference/introduction">
+    Assistentes de IA para criar conteúdo
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Começando
 
-Everything you need to create world-class documentation.
+<Steps>
+  <Step title="Autenticação">
+    Faça login para obter seu token de acesso via `/auth/login`
+  </Step>
+  <Step title="Importe Contatos">
+    Adicione seus contatos via upload de CSV ou pela API
+  </Step>
+  <Step title="Crie uma Campanha">
+    Configure sua primeira campanha de email
+  </Step>
+  <Step title="Envie!">
+    Dispare a campanha e acompanhe as métricas em tempo real
+  </Step>
+</Steps>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## Autenticação
 
-## Need inspiration?
+Todas as requisições à API precisam do header `Authorization` com um Bearer token:
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
+```bash
+curl -X GET "https://api.bullq.com.br/api/contacts" \
+  -H "Authorization: Bearer seu_token_aqui"
+```
+
+<Card title="Ver documentação completa da API" icon="book" href="/api-reference/introduction">
+  Explore todos os endpoints disponíveis
 </Card>

@@ -1,13 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "BullQ API",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+  "openapi": "/api-reference/openapi.json",
   "navigation": {
     "tabs": [
       {
@@ -17,52 +18,239 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "quickstart"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Authentication",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              {
+                "openapi": "POST /auth/register"
+              },
+              {
+                "openapi": "POST /auth/login"
+              },
+              {
+                "openapi": "POST /auth/logout"
+              },
+              {
+                "openapi": "GET /auth/me"
+              },
+              {
+                "openapi": "POST /auth/refresh"
+              },
+              {
+                "openapi": "POST /auth/change-password"
+              },
+              {
+                "openapi": "GET /auth/sessions"
+              }
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              {
+                "openapi": "GET /api/contacts"
+              },
+              {
+                "openapi": "POST /api/contacts"
+              },
+              {
+                "openapi": "GET /api/contacts/{id}"
+              },
+              {
+                "openapi": "PUT /api/contacts/{id}"
+              },
+              {
+                "openapi": "DELETE /api/contacts/{id}"
+              },
+              {
+                "openapi": "POST /api/contacts/upload"
+              },
+              {
+                "openapi": "POST /api/contacts/bulk-delete"
+              },
+              {
+                "openapi": "POST /api/contacts/bulk-add-tags"
+              }
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "pages": [
+              {
+                "openapi": "GET /api/campaigns"
+              },
+              {
+                "openapi": "POST /api/campaigns"
+              },
+              {
+                "openapi": "GET /api/campaigns/{id}"
+              },
+              {
+                "openapi": "PUT /api/campaigns/{id}"
+              },
+              {
+                "openapi": "DELETE /api/campaigns/{id}"
+              },
+              {
+                "openapi": "POST /api/campaigns/{id}/send"
+              },
+              {
+                "openapi": "POST /api/campaigns/{id}/cancel"
+              },
+              {
+                "openapi": "GET /api/campaigns/{id}/metrics"
+              }
+            ]
+          },
+          {
+            "group": "Automations",
+            "pages": [
+              {
+                "openapi": "GET /api/automations"
+              },
+              {
+                "openapi": "POST /api/automations"
+              },
+              {
+                "openapi": "GET /api/automations/{id}"
+              },
+              {
+                "openapi": "PUT /api/automations/{id}"
+              },
+              {
+                "openapi": "DELETE /api/automations/{id}"
+              },
+              {
+                "openapi": "POST /api/automations/{id}/activate"
+              },
+              {
+                "openapi": "POST /api/automations/{id}/pause"
+              },
+              {
+                "openapi": "POST /api/automations/{id}/trigger"
+              }
+            ]
+          },
+          {
+            "group": "Segments",
+            "pages": [
+              {
+                "openapi": "GET /api/segments"
+              },
+              {
+                "openapi": "POST /api/segments"
+              },
+              {
+                "openapi": "GET /api/segments/{id}"
+              },
+              {
+                "openapi": "PUT /api/segments/{id}"
+              },
+              {
+                "openapi": "DELETE /api/segments/{id}"
+              },
+              {
+                "openapi": "GET /api/segments/{id}/contacts"
+              }
+            ]
+          },
+          {
+            "group": "Emails",
+            "pages": [
+              {
+                "openapi": "POST /api/emails/send"
+              },
+              {
+                "openapi": "POST /api/emails/send-batch"
+              },
+              {
+                "openapi": "GET /api/emails/{id}"
+              },
+              {
+                "openapi": "GET /api/emails/{id}/status"
+              },
+              {
+                "openapi": "GET /api/emails/{id}/metrics"
+              }
+            ]
+          },
+          {
+            "group": "Tags",
+            "pages": [
+              {
+                "openapi": "GET /api/tags"
+              },
+              {
+                "openapi": "POST /api/tags"
+              },
+              {
+                "openapi": "DELETE /api/tags/{id}"
+              }
+            ]
+          },
+          {
+            "group": "AI Agents",
+            "pages": [
+              {
+                "openapi": "GET /api/ai-agents"
+              },
+              {
+                "openapi": "POST /api/ai-agents"
+              },
+              {
+                "openapi": "GET /api/ai-agents/{id}"
+              },
+              {
+                "openapi": "PUT /api/ai-agents/{id}"
+              },
+              {
+                "openapi": "DELETE /api/ai-agents/{id}"
+              }
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              {
+                "openapi": "GET /billing/credits/balance"
+              },
+              {
+                "openapi": "GET /billing/credits/breakdown"
+              },
+              {
+                "openapi": "POST /billing/credits/checkout"
+              }
+            ]
+          },
+          {
+            "group": "Domains",
+            "pages": [
+              {
+                "openapi": "GET /domains"
+              },
+              {
+                "openapi": "POST /domains"
+              },
+              {
+                "openapi": "DELETE /domains/{id}"
+              },
+              {
+                "openapi": "POST /domains/{id}/verify"
+              }
             ]
           }
         ]
@@ -71,14 +259,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "App",
+          "href": "https://www.bullq.com.br",
+          "icon": "rocket"
         }
       ]
     }
@@ -90,33 +273,19 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Suporte",
+        "href": "mailto:suporte@bullq.com.br"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Acessar App",
+      "href": "https://www.bullq.com.br"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/jpasv"
     }
   }
 }
