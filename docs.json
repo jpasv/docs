@@ -16,10 +16,7 @@
         "groups": [
           {
             "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart"
-            ]
+            "pages": ["index"]
           }
         ]
       },
@@ -28,229 +25,297 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "pages": ["api-reference/introduction"]
           },
           {
             "group": "Authentication",
             "pages": [
-              {
-                "openapi": "POST /auth/register"
-              },
-              {
-                "openapi": "POST /auth/login"
-              },
-              {
-                "openapi": "POST /auth/logout"
-              },
-              {
-                "openapi": "GET /auth/me"
-              },
-              {
-                "openapi": "POST /auth/refresh"
-              },
-              {
-                "openapi": "POST /auth/change-password"
-              },
-              {
-                "openapi": "GET /auth/sessions"
-              }
+              {"openapi": "POST /auth/register"},
+              {"openapi": "POST /auth/login"},
+              {"openapi": "POST /auth/logout"},
+              {"openapi": "GET /auth/me"},
+              {"openapi": "POST /auth/refresh"},
+              {"openapi": "POST /auth/change-password"},
+              {"openapi": "POST /auth/validate-token"},
+              {"openapi": "GET /auth/sessions"},
+              {"openapi": "DELETE /auth/sessions/{sessionId}"}
             ]
           },
           {
             "group": "Contacts",
             "pages": [
-              {
-                "openapi": "GET /api/contacts"
-              },
-              {
-                "openapi": "POST /api/contacts"
-              },
-              {
-                "openapi": "GET /api/contacts/{id}"
-              },
-              {
-                "openapi": "PUT /api/contacts/{id}"
-              },
-              {
-                "openapi": "DELETE /api/contacts/{id}"
-              },
-              {
-                "openapi": "POST /api/contacts/upload"
-              },
-              {
-                "openapi": "POST /api/contacts/bulk-delete"
-              },
-              {
-                "openapi": "POST /api/contacts/bulk-add-tags"
-              }
+              {"openapi": "GET /api/contacts"},
+              {"openapi": "POST /api/contacts"},
+              {"openapi": "GET /api/contacts/{id}"},
+              {"openapi": "PUT /api/contacts/{id}"},
+              {"openapi": "DELETE /api/contacts/{id}"},
+              {"openapi": "POST /api/contacts/upload"},
+              {"openapi": "POST /api/contacts/preview-csv"},
+              {"openapi": "GET /api/contacts/import-progress/{progressId}"},
+              {"openapi": "POST /api/contacts/bulk-delete"},
+              {"openapi": "POST /api/contacts/bulk-add-tags"},
+              {"openapi": "GET /api/contacts/ids"},
+              {"openapi": "GET /api/contacts/tags"}
             ]
           },
           {
             "group": "Campaigns",
             "pages": [
-              {
-                "openapi": "GET /api/campaigns"
-              },
-              {
-                "openapi": "POST /api/campaigns"
-              },
-              {
-                "openapi": "GET /api/campaigns/{id}"
-              },
-              {
-                "openapi": "PUT /api/campaigns/{id}"
-              },
-              {
-                "openapi": "DELETE /api/campaigns/{id}"
-              },
-              {
-                "openapi": "POST /api/campaigns/{id}/send"
-              },
-              {
-                "openapi": "POST /api/campaigns/{id}/cancel"
-              },
-              {
-                "openapi": "GET /api/campaigns/{id}/metrics"
-              }
+              {"openapi": "GET /api/campaigns"},
+              {"openapi": "POST /api/campaigns"},
+              {"openapi": "GET /api/campaigns/{id}"},
+              {"openapi": "PUT /api/campaigns/{id}"},
+              {"openapi": "DELETE /api/campaigns/{id}"},
+              {"openapi": "POST /api/campaigns/{id}/send"},
+              {"openapi": "POST /api/campaigns/{id}/cancel"},
+              {"openapi": "GET /api/campaigns/{id}/metrics"}
+            ]
+          },
+          {
+            "group": "Campaign Conversations (AI)",
+            "pages": [
+              {"openapi": "GET /api/campaign-conversations"},
+              {"openapi": "POST /api/campaign-conversations"},
+              {"openapi": "GET /api/campaign-conversations/{id}"},
+              {"openapi": "DELETE /api/campaign-conversations/{id}"},
+              {"openapi": "POST /api/campaign-conversations/{id}/messages"},
+              {"openapi": "POST /api/campaign-conversations/{id}/messages/simple"},
+              {"openapi": "GET /api/campaign-conversations/{conversationId}/files"},
+              {"openapi": "POST /api/campaign-conversations/{conversationId}/files/upload"},
+              {"openapi": "GET /api/campaign-conversations/{conversationId}/files/{fileId}"},
+              {"openapi": "DELETE /api/campaign-conversations/{conversationId}/files/{fileId}"},
+              {"openapi": "POST /api/campaign-conversations/{conversationId}/files/{fileId}/import"},
+              {"openapi": "POST /api/campaign-conversations/{conversationId}/files/{fileId}/mappings/{mappingId}/confirm"}
             ]
           },
           {
             "group": "Automations",
             "pages": [
-              {
-                "openapi": "GET /api/automations"
-              },
-              {
-                "openapi": "POST /api/automations"
-              },
-              {
-                "openapi": "GET /api/automations/{id}"
-              },
-              {
-                "openapi": "PUT /api/automations/{id}"
-              },
-              {
-                "openapi": "DELETE /api/automations/{id}"
-              },
-              {
-                "openapi": "POST /api/automations/{id}/activate"
-              },
-              {
-                "openapi": "POST /api/automations/{id}/pause"
-              },
-              {
-                "openapi": "POST /api/automations/{id}/trigger"
-              }
+              {"openapi": "GET /api/automations"},
+              {"openapi": "POST /api/automations"},
+              {"openapi": "GET /api/automations/{id}"},
+              {"openapi": "PUT /api/automations/{id}"},
+              {"openapi": "DELETE /api/automations/{id}"},
+              {"openapi": "POST /api/automations/{id}/activate"},
+              {"openapi": "POST /api/automations/{id}/pause"},
+              {"openapi": "POST /api/automations/{id}/archive"},
+              {"openapi": "POST /api/automations/{id}/trigger"},
+              {"openapi": "GET /api/automations/{id}/executions"},
+              {"openapi": "GET /api/automations/{id}/contacts-count-by-node"},
+              {"openapi": "GET /api/automations/{id}/nodes/{nodeId}/contacts"},
+              {"openapi": "POST /api/automations/{id}/nodes/{nodeId}/forward"},
+              {"openapi": "GET /api/automations/events"}
+            ]
+          },
+          {
+            "group": "Automation Executions",
+            "pages": [
+              {"openapi": "GET /api/automations/executions/all"},
+              {"openapi": "GET /api/automations/executions/{executionId}"},
+              {"openapi": "DELETE /api/automations/executions/{executionId}"},
+              {"openapi": "DELETE /api/automations/executions/{executionId}/soft"},
+              {"openapi": "POST /api/automations/executions/{executionId}/pause"},
+              {"openapi": "POST /api/automations/executions/{executionId}/resume"},
+              {"openapi": "POST /api/automations/executions/{executionId}/restore"},
+              {"openapi": "POST /api/automations/executions/{executionId}/reprocess"}
             ]
           },
           {
             "group": "Segments",
             "pages": [
-              {
-                "openapi": "GET /api/segments"
-              },
-              {
-                "openapi": "POST /api/segments"
-              },
-              {
-                "openapi": "GET /api/segments/{id}"
-              },
-              {
-                "openapi": "PUT /api/segments/{id}"
-              },
-              {
-                "openapi": "DELETE /api/segments/{id}"
-              },
-              {
-                "openapi": "GET /api/segments/{id}/contacts"
-              }
+              {"openapi": "GET /api/segments"},
+              {"openapi": "POST /api/segments"},
+              {"openapi": "GET /api/segments/{id}"},
+              {"openapi": "PUT /api/segments/{id}"},
+              {"openapi": "DELETE /api/segments/{id}"},
+              {"openapi": "GET /api/segments/{id}/contacts"},
+              {"openapi": "DELETE /api/segments/{id}/contacts/remove"},
+              {"openapi": "POST /api/segments/{id}/recalculate"}
             ]
           },
           {
             "group": "Emails",
             "pages": [
-              {
-                "openapi": "POST /api/emails/send"
-              },
-              {
-                "openapi": "POST /api/emails/send-batch"
-              },
-              {
-                "openapi": "GET /api/emails/{id}"
-              },
-              {
-                "openapi": "GET /api/emails/{id}/status"
-              },
-              {
-                "openapi": "GET /api/emails/{id}/metrics"
-              }
+              {"openapi": "GET /api/emails"},
+              {"openapi": "POST /api/emails/send"},
+              {"openapi": "POST /api/emails/send-batch"},
+              {"openapi": "POST /api/emails/send-to-segment"},
+              {"openapi": "GET /api/emails/{id}"},
+              {"openapi": "GET /api/emails/{id}/status"},
+              {"openapi": "GET /api/emails/{id}/metrics"},
+              {"openapi": "GET /api/emails/config/status"}
             ]
           },
           {
             "group": "Tags",
             "pages": [
-              {
-                "openapi": "GET /api/tags"
-              },
-              {
-                "openapi": "POST /api/tags"
-              },
-              {
-                "openapi": "DELETE /api/tags/{id}"
-              }
+              {"openapi": "GET /api/tags"},
+              {"openapi": "POST /api/tags"},
+              {"openapi": "PUT /api/tags/{id}"},
+              {"openapi": "DELETE /api/tags/{id}"}
+            ]
+          },
+          {
+            "group": "Templates",
+            "pages": [
+              {"openapi": "GET /templates"},
+              {"openapi": "POST /templates"},
+              {"openapi": "GET /templates/{id}"},
+              {"openapi": "PUT /templates/{id}"},
+              {"openapi": "DELETE /templates/{id}"},
+              {"openapi": "POST /templates/{id}/duplicate"},
+              {"openapi": "POST /templates/{id}/favorite"},
+              {"openapi": "POST /templates/{id}/render"},
+              {"openapi": "GET /templates/categories"},
+              {"openapi": "GET /templates/tags"}
             ]
           },
           {
             "group": "AI Agents",
             "pages": [
-              {
-                "openapi": "GET /api/ai-agents"
-              },
-              {
-                "openapi": "POST /api/ai-agents"
-              },
-              {
-                "openapi": "GET /api/ai-agents/{id}"
-              },
-              {
-                "openapi": "PUT /api/ai-agents/{id}"
-              },
-              {
-                "openapi": "DELETE /api/ai-agents/{id}"
-              }
+              {"openapi": "GET /api/ai-agents"},
+              {"openapi": "POST /api/ai-agents"},
+              {"openapi": "GET /api/ai-agents/{id}"},
+              {"openapi": "PUT /api/ai-agents/{id}"},
+              {"openapi": "DELETE /api/ai-agents/{id}"},
+              {"openapi": "GET /api/ai-agents/default"},
+              {"openapi": "POST /api/ai-agents/{id}/set-default"},
+              {"openapi": "GET /api/ai-agents/memory"},
+              {"openapi": "GET /api/ai-agents/memory/{agentId}"},
+              {"openapi": "GET /api/ai-agents/memory/context"},
+              {"openapi": "POST /api/ai-agents/memory/feedback"}
             ]
           },
           {
-            "group": "Billing",
+            "group": "AI Assistant",
             "pages": [
-              {
-                "openapi": "GET /billing/credits/balance"
-              },
-              {
-                "openapi": "GET /billing/credits/breakdown"
-              },
-              {
-                "openapi": "POST /billing/credits/checkout"
-              }
+              {"openapi": "GET /api/ai-assistant/conversations"},
+              {"openapi": "POST /api/ai-assistant/conversations"},
+              {"openapi": "GET /api/ai-assistant/conversations/{id}"},
+              {"openapi": "DELETE /api/ai-assistant/conversations/{id}"},
+              {"openapi": "POST /api/ai-assistant/conversations/{id}/messages"}
+            ]
+          },
+          {
+            "group": "Message Feedback",
+            "pages": [
+              {"openapi": "GET /api/message-feedback"},
+              {"openapi": "POST /api/message-feedback"},
+              {"openapi": "GET /api/message-feedback/{id}"},
+              {"openapi": "PUT /api/message-feedback/{id}"},
+              {"openapi": "DELETE /api/message-feedback/{id}"},
+              {"openapi": "GET /api/message-feedback/message/{messageId}"},
+              {"openapi": "GET /api/message-feedback/conversation/{conversationId}"},
+              {"openapi": "GET /api/message-feedback/learning-insights"}
             ]
           },
           {
             "group": "Domains",
             "pages": [
-              {
-                "openapi": "GET /domains"
-              },
-              {
-                "openapi": "POST /domains"
-              },
-              {
-                "openapi": "DELETE /domains/{id}"
-              },
-              {
-                "openapi": "POST /domains/{id}/verify"
-              }
+              {"openapi": "GET /domains"},
+              {"openapi": "POST /domains"},
+              {"openapi": "GET /domains/{id}"},
+              {"openapi": "DELETE /domains/{id}"},
+              {"openapi": "POST /domains/{id}/verify"}
+            ]
+          },
+          {
+            "group": "Billing - Credits",
+            "pages": [
+              {"openapi": "GET /billing/credits/balance"},
+              {"openapi": "GET /billing/credits/breakdown"},
+              {"openapi": "GET /billing/credits/status"},
+              {"openapi": "GET /billing/credits/packages"},
+              {"openapi": "GET /billing/credits/models"},
+              {"openapi": "GET /billing/credits/transactions"},
+              {"openapi": "GET /billing/credits/warnings"},
+              {"openapi": "GET /billing/credits/degradation"},
+              {"openapi": "POST /billing/credits/checkout"},
+              {"openapi": "POST /billing/credits/topup"},
+              {"openapi": "POST /billing/credits/payment-intent"},
+              {"openapi": "POST /billing/credits/on-demand/enable"},
+              {"openapi": "POST /billing/credits/on-demand/disable"},
+              {"openapi": "PUT /billing/credits/on-demand/limit"}
+            ]
+          },
+          {
+            "group": "Billing - Subscriptions",
+            "pages": [
+              {"openapi": "GET /billing/my-plan"},
+              {"openapi": "GET /billing/plans"},
+              {"openapi": "GET /billing/usage"},
+              {"openapi": "GET /billing/usage/alerts"},
+              {"openapi": "GET /billing/history"},
+              {"openapi": "GET /billing/invoices"},
+              {"openapi": "GET /billing/debug/email-status"},
+              {"openapi": "GET /subscriptions"},
+              {"openapi": "POST /subscriptions/checkout"},
+              {"openapi": "POST /subscriptions/change-plan"},
+              {"openapi": "POST /subscriptions/reactivate"},
+              {"openapi": "GET /subscriptions/portal"}
+            ]
+          },
+          {
+            "group": "Bulk Actions",
+            "pages": [
+              {"openapi": "GET /bulk-actions"},
+              {"openapi": "POST /bulk-actions"},
+              {"openapi": "GET /bulk-actions/{id}"},
+              {"openapi": "DELETE /bulk-actions/{id}"},
+              {"openapi": "POST /bulk-actions/{id}/start"},
+              {"openapi": "POST /bulk-actions/{id}/complete"},
+              {"openapi": "POST /bulk-actions/{id}/mark-failed"},
+              {"openapi": "GET /bulk-actions/{id}/progress"},
+              {"openapi": "GET /bulk-actions/{id}/stream"},
+              {"openapi": "POST /bulk-actions/contacts/delete-with-tracking"}
+            ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              {"openapi": "GET /api/users"},
+              {"openapi": "GET /api/users/profile"},
+              {"openapi": "PUT /api/users/profile"},
+              {"openapi": "GET /api/users/{id}"},
+              {"openapi": "PUT /api/users/{id}"},
+              {"openapi": "DELETE /api/users/{id}"}
+            ]
+          },
+          {
+            "group": "Tenant",
+            "pages": [
+              {"openapi": "GET /api/tenant/settings"},
+              {"openapi": "PUT /api/tenant/settings"},
+              {"openapi": "GET /api/tenant/limits"},
+              {"openapi": "GET /api/tenant/usage"}
+            ]
+          },
+          {
+            "group": "Health",
+            "pages": [
+              {"openapi": "GET /health"},
+              {"openapi": "GET /health/live"},
+              {"openapi": "GET /health/ready"},
+              {"openapi": "GET /api/health/automations"},
+              {"openapi": "POST /api/health/automations/cache/refresh"},
+              {"openapi": "POST /api/health/automations/queues/clean"}
+            ]
+          },
+          {
+            "group": "Admin",
+            "pages": [
+              {"openapi": "GET /admin/overview"},
+              {"openapi": "GET /admin/tenants"},
+              {"openapi": "GET /admin/alerts"},
+              {"openapi": "GET /admin/resend"},
+              {"openapi": "GET /admin/openrouter"},
+              {"openapi": "POST /admin/cache/invalidate"}
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              {"openapi": "POST /webhooks/stripe"}
             ]
           }
         ]
